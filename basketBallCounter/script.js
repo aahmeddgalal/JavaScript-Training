@@ -31,3 +31,10 @@ function addThreeLeft() {
     leftResults += 3
     document.getElementById("l-result").textContent = leftResults
 }
+
+function reset() {
+    rightResults = 0
+    leftResults = 0
+    document.getElementById("r-result").textContent = rightResults
+    document.getElementById("l-result").textContent = leftResults
+}
