@@ -1,0 +1,31 @@
+.countainer {
+    margin: auto;
+    background-color: rgb(25, 25, 83);
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    width: 50%;
+    color: aliceblue;
+    text-align: center;
+    padding-bottom: 10px;
+} 
+
+button {
+    display: inline-block;
+    background-color: rgb(25, 25, 83);
+    color: aliceblue;
+    border: 2px solid aliceblue;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.results {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
