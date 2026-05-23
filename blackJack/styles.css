@@ -1,0 +1,23 @@
+main {
+    background-color: #0f8330;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 20px;
+    height: 100vh;
+}
+
+h1 {
+    color: rgb(222, 197, 7);
+
+}
+
+button {
+    background-color: #ecf0f1;
+    color: #0f8330;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
