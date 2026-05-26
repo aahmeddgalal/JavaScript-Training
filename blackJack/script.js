@@ -1,5 +1,6 @@
 let min = 2
 let max = 11
+let pLayed = 0
 
 function getRandomCard() {
     let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min
@@ -7,6 +8,7 @@ function getRandomCard() {
 }
 
 function play() {
+    pLayed++
     let firstCard = getRandomCard()
     let secondCard = getRandomCard()
     let sum = firstCard + secondCard
@@ -14,6 +16,9 @@ function play() {
     let isAlive = true
     let message = ""
 
+    if (pLayed > 0) {
+        document.getElementById("button").innerText = "Play Again!"
+    }
     document.getElementById("cards").innerText =
         "Cards: " + firstCard + " " + secondCard
 
@@ -34,5 +39,5 @@ function play() {
     }
 
     document.getElementById("message").innerText = message
-
+    pLayed++
 }
