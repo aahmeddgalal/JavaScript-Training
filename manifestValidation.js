@@ -1,82 +1,76 @@
 function normalizeUnits(manifest) {
-  const copy = { ...manifest };
-
-  if (copy.unit === "lb") {
-    copy.weight = copy.weight * 0.45;
-    copy.unit = "kg";
+  const copy = { ...manifest }
+  if (copy.unit == "lb") {
+    copy.weight = copy.weight * 0.45
+    copy.unit = "kg"
   }
-
-  return copy;
+  return copy
 }
 
 function validateManifest(manifest) {
-  const result = {};
+  const copy = {}
 
-  // containerId
   if (!("containerId" in manifest)) {
-    result.containerId = "Missing";
+    copy.containerId = "Missing"
   } else if (
     manifest.containerId === null ||
     !Number.isInteger(manifest.containerId) ||
     manifest.containerId <= 0
   ) {
-    result.containerId = "Invalid";
+    copy.containerId = "Invalid"
   }
 
-  // destination
   if (!("destination" in manifest)) {
-    result.destination = "Missing";
+    copy.destination = "Missing"
   } else if (
     typeof manifest.destination !== "string" ||
-    manifest.destination.trim() === ""
-  ) {
-    result.destination = "Invalid";
+    manifest.destination.trim() === "") {
+    copy.destination = "Invalid"
   }
 
-  // weight
   if (!("weight" in manifest)) {
-    result.weight = "Missing";
+    copy.weight = "Missing"
   } else if (
-    typeof manifest.weight !== "number" ||
+    manifest.weight === null ||
     Number.isNaN(manifest.weight) ||
     manifest.weight <= 0
   ) {
-    result.weight = "Invalid";
+    copy.weight = "Invalid"
   }
 
-  // unit
   if (!("unit" in manifest)) {
-    result.unit = "Missing";
+    copy.unit = "Missing"
   } else if (
-    manifest.unit !== "kg" &&
-    manifest.unit !== "lb"
+    manifest.unit !== "lb" && manifest.unit !== "kg"
   ) {
-    result.unit = "Invalid";
+    copy.unit = "Invalid"
   }
 
-  // hazmat
   if (!("hazmat" in manifest)) {
-    result.hazmat = "Missing";
-  } else if (typeof manifest.hazmat !== "boolean") {
-    result.hazmat = "Invalid";
+    copy.hazmat = "Missing"
+  } else if (
+    typeof manifest.hazmat !== "boolean"
+  ) {
+    copy.hazmat = "Invalid"
   }
 
-  return result;
+  return copy
 }
 
 function processManifest(manifest) {
-  const validation = validateManifest(manifest);
-
+  const validation = validateManifest(manifest)
   const isValid = Object.keys(validation).length === 0;
-
   if (isValid) {
-    const normalized = normalizeUnits(manifest);
+    const normalized = normalizeUnits(manifest)
 
-    console.log(`Validation success: ${normalized.containerId}`);
-    console.log(`Total weight: ${normalized.weight} kg`);
+    console.log(`Validation success: ${normalized.containerId}`)
+    console.log(`Total weight: ${normalized.weight} kg`)
   } else {
-    console.log(`Validation error: ${manifest.containerId}`);
-    console.log(validation);
-    return validation;
+    console.log(`Validation error: ${manifest.containerId}`)
+    console.log(validation)
+    return validation
   }
 }
+
+
+console.log(validateManifest({ containerId: 1, destination: "Santa Cruz", weight: 304, unit: "kg", hazmat: false }))
