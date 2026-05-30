@@ -9,7 +9,7 @@ function normalizeUnits(manifest) {
 
 function validateManifest(manifest) {
   const copy = {}
-
+// I did it myself
   if (!("containerId" in manifest)) {
     copy.containerId = "Missing"
   } else if (
