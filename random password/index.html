@@ -18,12 +18,15 @@
     </style>
 </head>
 <body>
-    <main>
+    <>
         <h1>Random Password Generator</h1>
+        <input type="number" id="length" placeholder="Enter password length" min="1">
+        <input type="checkbox" id="includeSymbols"> Include Symbols
+        <input type="checkbox" id="includeNumbers"> Include Numbers
         <button id="generate" onclick="generate()">Generate Password</button>
-        <div id="password1"></div>
-        <div id="password2"></div>
 
+        <div id="password1" onclick="copy('password1')"></div>
+        <div id="password2" onclick="copy('password2')"></div>
         <script src="randomPassword.js"></script>
     </main>
 </body>
