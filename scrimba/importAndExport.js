@@ -7,3 +7,9 @@ export const travels = [{}, {}, {}]
 // OR
 // in the end of the file of functions =>>
 // export { name1, name2... }
+
+// another way of exporting, The Default export 
+export default function getMatchingTrips(arr, keyword) {
+  return arr.filter(function(trip) {
+    return trip.description.tiLowerCase().includes(keyword)
+  })}  // only one defaut
