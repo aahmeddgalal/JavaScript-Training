@@ -11,7 +11,7 @@ console.log(isPalindrome("acecar"))
 function findPalindromeBreaks(words) {
   const myArr = []
   if (words.length === 0) {
-  return [];
+    return [];
   }
   for (const i in words) {
     if (!isPalindrome(words[i])) {
@@ -34,7 +34,7 @@ function findRepeatedPhrases(words, phraseLength) {
     phrases.push({
       index: i,
       phrase
-    }) 
+    })
   }
 
   for (let i = 0; i < phrases.length; i++) {
@@ -42,7 +42,7 @@ function findRepeatedPhrases(words, phraseLength) {
       if (phrases[i].phrase.join("|") == phrases[j].phrase.join("|") && i != j) {
         views.add(phrases[i].index)
         views.add(phrases[j].index)
-      } 
+      }
     }
   }
 
@@ -54,9 +54,9 @@ function findRepeatedPhrases(words, phraseLength) {
 
 function analyzeTexts(texts, phraseLength) {
   if (texts.length === 0) {
-  return [];
+    return [];
   }
-  
+
   const myObjects = []
   for (const item of texts) {
     myObjects.push({
