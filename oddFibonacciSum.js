@@ -14,4 +14,4 @@ function sumFibs(num) {
   return oddFibs
 }
 
-console.log(sumFibs(100)) 
+console.log(sumFibs(100))  
